@@ -1,0 +1,95 @@
+@charset "utf-8";
+body{ font-size:12px; line-height:22px; color:gray;  }
+
+.fc_White{color:white;}
+.fc_Gray{color:gray}
+.fc_ccc{color:#ccc}
+.fc_999{color:#999}
+.fc_666{color:#666}
+.fc_333{color:#333}
+.fc_Black{color:black}
+
+.fc_Red{ color:red; }
+.fc_cc0000{ color:#cc0000; }
+.fc_990000{ color:#990000; }
+.fc_990000{ color:#330000; }
+.fc_Maroon{ color:maroon; }
+
+.fc_Green{ color:green; }
+.fc_00cc00{color:#00cc00}
+.fc_009900{color:#009900}
+.fc_009900{color:#003300}
+
+.fc_Blue{ color:blue; }
+.fc_0000cc{color:#0000cc;}
+.fc_000066{color:#000066;}
+.fc_000099{color:#000099}
+.fc_000099{color:#000033}
+.fc_Navy{ color:navy; }
+.fc_42CCD9{ color:#42CCD9}
+
+
+.fc_Yellow{ color:yellow; }
+.fc_FF6600{color:#FF6600; }
+.fc_ffcc99{color:#ffcc99; }
+.fc_FFFFCC{color: #FFFFCC; }
+.fc_ee9b00{ color:#ee9b00;}
+
+.fc_Deeppink{ color:deeppink; }
+
+.fc_Orange{ color:orange; }
+.fc_Chocolate{color:chocolate;}
+
+.fc_Darkkhaki{color:darkkhaki;}
+.fc_Olive{ color:olive; }
+.fc_GrYe{ color:greenyellow; }
+.fc_YeGr{ color:yellowgreen; }
+
+.fc_Dodgerblue{ color:dodgerblue; }
+
+.fc_ff0066{ color:#FF0033;}
+.fc_ff0066{ color:#FF0066;}
+.fc_ff0099{ color:#FF0099;}
+.fc_ff00CC{ color:#FF00CC;}
+.fc_Purple{ color:purple; }
+.fc_CC00FF{ color:#CC00FF;}
+.fc_9900FF{ color:#9900FF;}
+.fc_6600FF{ color:#6600FF;}
+.fc_3300FF{ color:#3300FF;}
+
+.fc_Pink{ color:pink; }
+
+
+.fs_9px{ font-size:9px; }
+.fs_12px{ font-size:12px; }
+.fs_13px, h6{ font-size:13px; }
+.fs_14px, h5{ font-size:14px; }
+.fs_15px, h4{ font-size:15px; }
+
+/** 系统黑体在16-27PX下显示不良 英文arial在20px下显示不良 */
+.fs_16px{ font-size:16px; }
+.fs_17px{ font-size:17px;}
+.fs_18px{ font-size:18px;}
+.fs_19px{ font-size:19px;}
+
+.fs_20px{ font-size:20px;}
+.fs_21px{ font-size:21px;}
+
+.fs_28px, h3{ font-size:28px; }
+.fs_31px{ font-size:31px; }
+.fs_32px, h2{ font-size:32px; line-height:normal}
+.fs_41px{ font-size:41px; }
+.fs_45px{ font-size:45px; line-height:45px;}
+.fs_64px, h1{ font-size:64px; }
+
+.ff_bold{ font-weight:bold}
+
+.ff_links{ text-decoration:underline; }
+.ff_del{ text-decoration:line-through; }
+
+.fm_heti{font-family: "黑体"}
+.fm_Arial{font-family:Arial, Helvetica, sans-serif}
+
+.fc_ee9b00 a{ color:#ee9b00}
+.fc_ee9b00 a:visited{ color:#ee9b00}
+.fc_ee9b00 a:hover{ color: #FF6600}

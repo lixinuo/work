@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{ width:100%; height:100%; background:url(../images/tubg.jpg) repeat;}
+*{ margin:0px; padding:0px; border:0px; font-size:12px; font-family:"宋体";}
+.login_box{ background:url(../images/login_bg.jpg) repeat-x; height:335px;}
+.logintable{ border:none; padding:20px; margin:0px; border-collapse:collapse; }
+.logintable td{ padding:5px;}
+.login_title{ font-family:"微软雅黑"; font-size:18px; color:#333333; line-height:40px; height:40px; }
+.login_btn{ background:url(../images/login_btn_bg.jpg) no-repeat; width:63px; height:19px; line-height:19px; border:0px; text-align:center; color:#FFF;}
+.login_text{ color:#b70403; font-weight:bold; font-size:14px;}
+.login_input{ background:url(../images/login_input_bg.jpg) no-repeat; width:113px; height:23px; line-height:23px; border:none;}
+.login_input input{ border:0px; height:18px; line-height:18px; margin:2px; width:109px;}
+.login_input1{ background:url(../images/login_input1_bg.jpg) no-repeat; width:95px; height:23px; line-height:23px; border:none;}
+.c{ height:1px; display:none; clear:both; line-height:1px;}
+
+.login_box_left{ float:right; padding-top:70px; width:500px;}
+.login_box_left h1 img{ border:0px;}
+.login_box_left h6{ color:#cccccc; font-size:12px; font-weight:normal; margin-top:10px; }
+.login_box_right{ float:right; background:url(../images/login_box_bg.jpg) no-repeat; width:296px; height:335px; margin-right:200px;}
+.login_box_right table{ margin-top:36px; margin-left:20px;}
+
+.kuang{
+	width:306px; height:374px; background:url(../images/kuang.jpg) no-repeat; margin-top:80px; margin-left:auto; margin-right:auto;
+}
+.kcon{
+	padding:10px; text-align:left;
+}
+.ktitle{
+	height:30px; line-height:30px; color:#465637; background:url(../images/icon.jpg) left center no-repeat; font-size:16px; font-weight:bold; text-align:left; padding-left:35px; letter-spacing:2px;
+}
+.longin{
+	padding-top:20px; color:#465637;
+}
+input.ninput{
+	height:25px; line-height:25px; border:1px solid #afafaf; background:url(../images/inputbg.jpg) repeat-x; width:160px;
+}
+input.cinput{
+	height:25px;line-height:25px; border:1px solid #afafaf; background:url(../images/inputbg.jpg) repeat-x; width:60px;
+}
+
+.boxinput{
+	vertical-align:middle
+}
+.in{
+	width:96px; border:0px; margin:0px; padding:0px; background:url(../images/in.jpg) no-repeat; cursor:pointer; height:30px; overflow:hidden;
+}
+.ou{
+	width:96px; border:0px; margin:0px; padding:0px; background:url(../images/ou.jpg) no-repeat; cursor:pointer; height:30px; overflow:hidden;
+}
+.fg{
+	text-align:center; margin-top:20px;
+}

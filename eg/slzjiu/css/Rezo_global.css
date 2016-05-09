@@ -1,0 +1,80 @@
+@charset "utf-8";
+/**Built by Rezo.Jiang 2008-06-02*/
+
+
+ /**hack Opera, FF, Float "bug"*/
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+
+
+
+/**去除所有元素补丁,填充,下划线和LI元素头*/
+*{margin:0 auto; padding:0; list-style-type:none; text-decoration:None; line-height:22px;}
+
+div{
+	position:relative;
+}
+
+
+/**默认以下元素宽度为100%并取消边框  */
+body, div, table, li{
+	border:0px
+}
+table{border-collapse:collapse; border-spacing:0}
+
+
+
+/**定义文本对齐方式*/
+.ha_left{text-align:left}
+.ha_center{text-align:center;}
+.ha_right{text-align:right;}
+
+.va_top{vertical-align:top}
+.va_center{vertical-align:middle;}
+.va_bottom{vertical-align:bottom;}
+.va_ttop{vertical-align:text-top;}
+.va_tbottom{vertical-align:text-bottom;}
+
+/**定义容器元素对齐方式*/
+.con_top{ margin-top:auto; }
+.con_right{ margin-left:auto; }
+.con_bottom{ margin-bottom:auto; }
+.con_left{ margin-right:auto; }
+.con_center{ margin:0 auto;}
+
+/**定义容器元素定位方式*/
+.po_abs{ position:absolute; }
+.po_rel{ position:relative; }
+.po_fix{ position:fixed; }
+
+/**定义容器元素宽度*/
+.wid_10{ width:10% }
+.wid_20{ width:20% }
+.wid_30{ width:30% }
+.wid_40{ width:40% }
+.wid_50{ width:50% }
+.wid_60{ width:60% }
+.wid_70{ width:70% }
+.wid_80{ width:80% }
+.wid_90{ width:90% }
+
+
+/**定义LI元素自动省略*/
+.li_overText{ white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow: hidden; }
+
+
+/**定义背景重复, 定义无内容*/
+.bg_repx{ background-repeat:repeat-x;}
+.bg_repy{ background-repeat:repeat-y;}
+.no_bg{ background-image:none }
+.no_bgrep{ background-repeat:no-repeat }
+.no_content{ font-size:0; }
+
+input{ line-height:16px; }

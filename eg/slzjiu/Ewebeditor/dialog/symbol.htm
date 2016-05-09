@@ -1,0 +1,390 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="dialog.js"></script>
+
+<STYLE type=text/css>
+table.content {background-color:#000000;width:460px;}
+table.content td {background-color:#ffffff;width:20px;height:20px;text-align:center;vertical-align:middle;cursor:hand;font-size:9pt;}
+.card {cursor:hand;background-color:#3A6EA5;text-align:center;white-space:nowrap}
+.tdPreview {font-size:32px;color:#0000ff}
+.tdPreview SPAN {font-size:32px;color:#0000ff}
+</STYLE>
+
+<script type="text/javascript">
+document.write ("<link href='../skin/" + config.Skin + "/dialog.css' type='text/css' rel='stylesheet'>");
+
+document.write ("<TITLE>"+lang["DlgSymbol"]+"</TITLE>");
+
+function cardClick(cardID){
+	var obj;
+	for (var i=1;i<6;i++){
+		obj=document.all("card"+i);
+		obj.style.backgroundColor="#3A6EA5";
+		obj.style.color="#FFFFFF";
+	}
+	obj=document.all("card"+cardID);
+	obj.style.backgroundColor="#FFFFFF";
+	obj.style.color="#3A6EA5";
+
+	for (var i=1;i<6;i++){
+		obj=document.all("content"+i);
+		obj.style.display="none";
+	}
+	obj=document.all("content"+cardID);
+	obj.style.display="";
+}
+
+function SymbolOver(){
+	var el=event.srcElement;
+	if (el.tagName=="SPAN"){
+		el=el.parentElement;
+	}
+	preview.innerHTML=el.innerHTML;
+}
+
+function SymbolClick(){
+	var el=event.srcElement;
+	if (el.tagName=="SPAN"){
+		el=el.parentElement;
+	}
+	if (el.innerHTML=="&nbsp;") return;
+	dialogArguments.insertHTML(el.innerHTML);
+	window.returnValue = null;
+	window.close();
+}
+
+function InitDocument(){
+	lang.TranslatePage(document);
+	adjustDialog();
+}
+
+function writeSymbol(font){
+	for(var i=33;i<=262;){ 
+		document.write("<tr>");
+		for(var j=0;j<=22;j++){ 
+			document.write("<td onmouseover='SymbolOver()' onclick='SymbolClick()'><span style='font-family:"+font+"'>&#"+i+";</span></td>");
+			i++ ;
+		}
+		document.write("</tr>") ;
+	}
+}
+</script>
+</HEAD>
+
+<BODY onLoad="InitDocument()">
+<table border=0 cellpadding=0 cellspacing=5 id=tabDialogSize><tr><td>
+
+
+<table border=0 cellpadding=0 cellspacing=0 align=center><tr valign=top><td>
+
+
+<table border=0 cellpadding=3 cellspacing=0>
+<tr align=center>
+	<td class="card" onClick="cardClick(1)" id="card1">Verdana</td>
+	<td width=2></td>
+	<td class="card" onClick="cardClick(2)" id="card2">Webdings</td>
+	<td width=2></td>
+	<td class="card" onClick="cardClick(3)" id="card3">Wingdings</td>
+	<td width=2></td>
+	<td class="card" onClick="cardClick(4)" id="card4">Symbol</td>
+	<td width=2></td>
+	<td class="card" onClick="cardClick(5)" id="card5">Unicode</td>
+</tr>
+<tr>
+	<td bgcolor=#ffffff align=center valign=middle colspan=11>
+	<table border=0 cellpadding=0 cellspacing=1 class="content" id="content1">
+	<script type="text/javascript">writeSymbol("Verdana")</script>
+	</table>
+	<table border=0 cellpadding=0 cellspacing=1 class="content" id="content2">
+	<script type="text/javascript">writeSymbol("Webdings")</script>
+	</table>
+	<table border=0 cellpadding=0 cellspacing=1 class="content" id="content3">
+	<script type="text/javascript">writeSymbol("Wingdings")</script>
+	</table>
+	<table border=0 cellpadding=0 cellspacing=1 class="content" id="content4">
+	<script type="text/javascript">writeSymbol("Symbol")</script>
+	</table>
+	<table border=0 cellpadding=0 cellspacing=1 class="content" id="content5">
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#402;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#913;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#914;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#915;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#916;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#917;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#918;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#919;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#920;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#921;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#922;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#923;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#924;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#925;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#926;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#927;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#928;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#929;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#931;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#932;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#933;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#934;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#935;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#936;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#937;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#945;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#946;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#947;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#948;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#949;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#950;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#951;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#952;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#953;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#954;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#955;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#956;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#957;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#958;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#959;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#960;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#961;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#962;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#963;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#964;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#965;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#966;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#967;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#968;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#969;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#977;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#978;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#982;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8226;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8230;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8242;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8243;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8254;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8260;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8472;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8465;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8476;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8482;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8501;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8592;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8593;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8594;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8595;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8596;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8629;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8656;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8657;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8658;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8659;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8660;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8704;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8706;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8707;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8709;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8711;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8712;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8713;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8715;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8719;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8722;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8727;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8730;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8733;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8734;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8736;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8869;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8870;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8745;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8746;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8747;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8756;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8764;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8773;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8800;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8801;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8804;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8805;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8834;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8835;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8836;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8838;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8839;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8853;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8855;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8901;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8968;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8969;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8970;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#8971;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9001;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9002;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9674;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9824;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9827;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9829;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&#9830;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+	</tr>
+	<tr>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+		<td onMouseOver="SymbolOver()" onClick="SymbolClick()">&nbsp;</td>
+	</tr>
+	</table>
+
+	</td>
+</tr>
+</table>
+
+
+</td><td width=10>&nbsp;</td><td>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td height=25></td></tr>
+<tr><td align=center><span lang=DlgSymbolPreview></span></td></tr>
+<tr><td height=10></td></tr>
+<tr><td align=center valign=middle><table border=0 cellpadding=0 cellspacing=1 bgcolor=#000000 width=50 height=50><tr><td bgcolor=#ffffff class=tdPreview id=preview align=center valign=middle width=50 height=50></td></tr></table></td></tr>
+<tr><td height=100></td></tr>
+<tr><td align=center><input type=button class="dlgBtnCommon" value='' onClick="window.close();" lang=DlgBtnCancel></td></tr>
+</table>
+
+</td></tr></table>
+
+
+
+
+
+</td></tr></table>
+
+<script type="text/javascript">
+cardClick(1);
+</script>
+
+</BODY>
+</HTML>

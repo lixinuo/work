@@ -1,0 +1,219 @@
+@charset "utf-8";
+/**
+	
+*/
+
+/**定义整个页面大小 默认为1002px*/
+body { width:1002px;background:#fff; color:#3a3a3a;margin:0 auto; padding:0;}
+td { font-size:12px;}
+
+/**
+	定义外层3个DIV的对齐方式
+	
+	[!] 注意:-----------------------------------------------------------------------------
+	
+	- 这三个元素内的文本内容的对齐方式默认为left!!! 表格内的td也是如此,若你想改变对齐方式,请用global里的样式定义
+	水平对齐以ha_开头, 垂直以va_开头;
+	
+	另外若想改变三个元素内的容器的对齐方式,            
+					只能使用  style    定义 text-align
+					或者修改下面的text-align
+	
+	---------------------------------------------------------------------------------------[!]	
+	
+	
+	[!] 注意:---------------------------------------------------------------------------------
+		若div宽高小于10px 请使用global.css定义的no_content类,否则不会成功
+	---------------------------------------------------------------------------------------[!]	
+				
+*/
+#header, #container, #foot{ margin-top:5px;}
+
+
+/**A标签显示:默认为红色*/
+a:link{ color:#666666}
+a:visited{ color:#666666}
+
+/**A标签鼠标放上颜色:默认为橙色*/
+a:hover{ color: #999999;}
+
+/**已访问A标签上颜色:默认深灰橙色*/
+
+.lineDisp{display:inline-block}
+
+/**定义底线, 分别为 实线, 虚线*/
+.uborder_line{ border-bottom:1px gray solid; }
+.uborder_dot{ border-bottom:1px gray dotted; }
+
+/**为AFEI的函数提供样式,注意图片必须存在*/
+.Rezo_newslists, .Rezo_newslists li, .Rezo_newslists2, .Rezo_newslists2 li{margin-left:5px; }
+.Rezo_newslists li, .Rezo_newslists2 li{ background-image:url(../images/square.gif); background-repeat:no-repeat; padding-left:10px; width:90% }
+.Rezo_newslists2 li{ border-bottom:1px gray dotted; }
+
+
+/**复制你自己的代码到这里*/
+
+
+#suibian a{display:block;
+	width:67px;
+	height:20px;
+	color: #FFf;
+	line-height:26px;
+	text-decoration:none;}
+
+#suibian a:hover {display:block;
+	width:67px;
+	height:25px;
+	color: #CC0000;
+	line-height:26px;
+	text-decoration:none;
+	background:url(../images/index_06.jpg) no-repeat 0 0;}
+}
+
+
+.white:link{ color:#fff;}
+
+/**已访问A标签上颜色:默认深灰橙色*/
+.white:visited{ color:#ffffff;}
+
+/**A标签鼠标放上颜色:默认为橙色*/
+.white:hover{ color: #FFCC00}
+
+.ffcc99:link{ color:#ffcc99;}
+.ffcc99:hover{ color: #FFCC00;}
+.ffcc99:visited{ color:#ffcc99;}
+
+.yellow2:link{ color: #FFFF00; }
+.yellow2:visited{ color: #FFFF00;}
+.yellow2:hover{ color: #fff}
+
+.faffc7:link{ color:#faffc7;}
+
+/**已访问A标签上颜色:默认深灰橙色*/
+.faffc7:visited{ color:#faffc7;}
+
+/**A标签鼠标放上颜色:默认为橙色*/
+.faffc7:hover{ color: #fff}
+
+
+
+#number li{margin-left:0px; line-height:35px; border-bottom:1px #ee9b00 dotted;}
+#newslist li{background-image:url(../images/li_03_1.jpg); background-repeat:no-repeat ;padding-left:16px; margin-left:5px; line-height:30px;color:#FF3300}
+#menu li{padding:0px 30px 0px 30px;display:inline;} 
+
+#topdiv{ background:url(../images/index_03.jpg) no-repeat; width:800px; margin-top:15px; text-align:right}
+#bodydiv{ width:800px;}
+#search{width:206px; height:100px; background:url(../images/index_08.jpg) no-repeat; margin-top:10px; margin-left:5px;float: left;}
+#banner{ width:580px;margin-top:10px;  float:right;line-height:1.5em;}
+#footdiv{ width:800px; height:70px; background:url(../images/index_24.jpg) no-repeat center;}
+#copy { text-align:left; width:350px; float:right; margin-top:10px;}
+#search2 li{ line-height:15px;}
+
+/**--------------------------------------from-----------------------------------*/
+
+.from1{
+padding:2px 8px 0pt 3px;
+border:1px solid #ee9b00;
+background-color:#fdf5e5;
+color:#ee9b00}
+
+
+.from2{
+padding:2px 8px 0pt 3px;
+border:1px solid #ee9b00;
+background-color:#fdf5e5;}
+
+#prod li{margin: 0px 0px 0px 5px;
+line-height:30px;
+border-bottom:dotted 1px #ee9b00;
+list-style-image:url(../images/li.gif);
+list-style-type: none;
+list-style-position: inside;
+text-align:left;
+}
+#prod li a{ color:#ee9b00; font-weight:bold;}
+#prod li a:hover{ color: #FF6600; font-weight:bold;}
+.yellow1{ background-color:#fdf5e5}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #fff;
+ /*background-image:  url("../images/bg.gif");*/
+}
+
+td,th {
+	font-size: 9pt;
+	color:#000000;
+}
+
+span.jtzi    { font-size: 11pt; font-family: 宋体; color: #000000; text-decoration: none; 
+               line-height: 200%; text-align: left; margin: 5 10px; text-indent:0  }
+.HJJ-bai         { text-align: left; line-height:200%; color:#FFFFFF; }
+.HJJ-hei         { text-align: left; line-height:200%; color:#000000; }
+.hjj-ty          { text-align: left; line-height:170%; margin: 5px 10px }
+a:link {
+	text-decoration: none; color:#000000;
+}
+a:visited {
+	text-decoration: none;color:#000000;
+}
+a:hover {
+	text-decoration: underline;color:#ff0000;
+}
+a:active {
+	text-decoration: none;color:#000000;
+}
+-->
+span.Bai,span.Hui,qlan
+{
+	font-size: 9pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-decoration: none;
+}
+span.Bai { color:#FFFFFF; }
+span.Hui { color:#3A3A3A; }
+span.qlan { color:#3881EE; }
+.input
+{
+	scrollbar-face-color:#5EC707;
+	scrollbar-shadow-color:#333333;
+	scrollbar-highlight-color:#333333;
+	scrollbar-3dlight-color:#333333;
+	scrollbar-darkshadow-color:#333333;
+	scrollbar-track-color:#333333;
+	scrollbar-arrow-color:#333333;
+	BORDER: #111111 1px solid;
+    FONT-SIZE: 9pt;
+    BACKGROUND-color: #ffffff
+}
+button
+{
+background:#D4D0C8;
+color:#000;
+BORDER-RIGHT:1px solid #666;
+BORDER-TOP:1px solid #ffffff;
+border-left:1px solid #ffffff;
+BORDER-bottom:1px solid #666;
+font-size:9pt;
+}
+.alink { text-decoration:underline;}
+.td8px { padding-left:8px;}
+
+
+
+.lmdh{background:#F2F9FD; height:25px; line-height:25px; border:1xp #CDE6FF solid; margin:5px 0px 5px 0px; font-size:14px; font-weight:bold;}
+.lmlb{background:#F2F9FD; height:30px; line-height:30px; border:1xp #CDE6FF solid;}
+.lmtj{background:#F2F9FD; height:30px; line-height:30px; border:1xp #CDE6FF solid;}
+.lmtjdt{padding:5px;}
+
+.tjnrym{background:#F2F9FD;border:1xp #CDE6FF solid; margin:5px 0px 0px 0px;}
+.tjnrbt{padding-left:15px; margin:5px 0px 0px 0px;}
+.tjnrnk{border:1px #CDE6FF solid; margin:20px 20px 20px 20px; background:#fff;}
+.inputkkys{border:1px #CDE6FF solid; padding-left:2px; color:#505050;}
