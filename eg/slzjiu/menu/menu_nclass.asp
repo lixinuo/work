@@ -14,8 +14,6 @@ id_a=db_a("select id from "&table_name&" where parent_id="&o_id&" order by s_ord
   pre_id=get_content(get_positon(id)-1)
   next_id=get_content(get_positon(id)+1)
 
-
-
 if action="s_order" then
 	strSQL="update "&table_name&" set s_order="&request("s_order")&" Where id=" &id& ""
 	conn.execute strSQL
@@ -180,129 +178,79 @@ function hiddenContent(i, event){
 } 
 </script> 
 </head>
-<body >
-<table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
- 
- <tr>
-  <td width="100%" height="2" bgcolor="#004A80"></td>
- </tr>
- <tr>
-  <td align="center"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" class="lmdh">
-    <tr>
-      <td align="center">菜单管理</td>
-    </tr>
-  </table>
-    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" class="lmtj">
-      <tr>
-        <td class="lmtjdt"><select name="select" onChange="location='?o_id='+this.options[this.selectedIndex].value" >
-       <option >选择栏目</option>
-       <%call my_optionid(0,o_id,table_name)%>
-      </select>
-      <%if o_id<>0 then w db_name(table_name,o_id)%></td>
-      </tr>
-    </table>
-    <table width="98%" border="0" cellpadding="3" cellspacing="1">
-    <tr>
-     <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="lmlb">
-       <tr>
-        <td width="13%" height="30" align="center">菜单名称
-         </div></td>
-        <td width="47%" align="center">链接地址</td>
-        <td width="10%" align="center">菜单排序</td>
-        <td width="30%" align="center">确定操作</td>
-       </tr>
-       <%
- if o_id=0 then
-    response.Write "<div align=center><font color=red>请选择上方的栏目</font></div>"
- else
-		set rs=server.CreateObject("adodb.recordset")
-		rs.Open "select * from "&table_name&" where parent_id="&o_id&" order by s_order asc,id desc",conn,1,1
-		if rs.EOF and rs.BOF then
-		 response.Write "<div align=center><font color=red>还没有菜单</font></center>"
-		 paixu=0
-		else
-		 formi=0
-		 do while not rs.EOF
-%>
-       <form name="formlist<%=formi%>" method="post" action="?action=edit&id=<%=rs(0)%>&o_id=<%= o_id %>">
-        <tr bgcolor="#FFFFFF" onMouseOver="this.bgColor='#CDE6FF'" onMouseOut="this.bgColor='#FFFFFF'">
-         <td height="30" align="center">
-				 <input name="s_name" type="text" id="s_name" size="12" value="<%=trim(rs("s_name"))%>">				 </td>
-         <td align="center"><!--<img src="../images/HELP.GIF" style="cursor:pointer" onMouseOver="tip(event,this,'<%=rs("s_content")%>')">&nbsp;&nbsp;&nbsp;-->
-           <input name="s_url" type="text" id="s_url" size="45" value="<%=trim(rs("s_url"))%>">
-         <img src="../images/detail_off.gif" border=0 onClick="showContent(<%=rs(0)%>, event)">
-          <div id="content<%=rs(0)%>" style="display:none; position:relative;text-align:left; padding:10px 10px 10px 10px; border:solid #CCC 2px;">
-          <div style="width:250px; padding-bottom:5px;">
-         <!-- <input type="text" name="add_item<%=formi%>" id="add_item<%=formi%>" style="width:100px;">
-          <input type="button" name="1" onClick="append_url(<%=formi%>);" value="添加">-->
-          <input type="button" name="2" onClick="this.form.submit();" value="修改">
-          <input type="button" name="3" onClick="hiddenContent(<%=rs(0)%>,event)" value="关闭">
-          </div>
-          <%=url_manage(trim(rs("s_url")))%>          </div>          </td>
-         <td align="center"><%if Isid(db_F(table_name,"top 1 s_order","s_order<"&Rs("s_order")&" and s_ok=1 and parent_id<>0  order by s_order desc"),0)<>0 then%><a href="?action=s_order_up&id=<%=trim(rs("id"))%>&o_id=<%= o_id %>">上</a><%else%>顶<%end if%>
-          <input name="s_order<%=rs(0)%>" type="text"  size="2" value="<%=int(rs("s_order"))%>" onChange="location='?action=s_order&id=<%=trim(rs("id"))%>&o_id=<%= o_id %>&s_order=' + this.value">
-         <%if Isid(db_F(table_name,"top 1 s_order","s_order>"&Rs("s_order")&" and s_ok=1 and parent_id<>0  order by s_order asc"),0)<>0 then%><a href="?action=s_order_down&id=<%=trim(rs("id"))%>&o_id=<%= o_id %>">下</a><%else%>底<%end if%></td>
-         <td align="center">
-          <select name="select" onChange="location='?action=move&id=<%= rs(0) %>&o_id='+this.options[this.selectedIndex].value" >
-           <option >选择栏目</option>
-           <%call my_optionid(0,o_id,table_name)%>
-          </select>
-          <input type="submit" class="inputkkys" name="Submit" value="修 改"> | <%
+<body>
+<div class="aclass">
+	<ul>
+    	<li class="bold">菜单管理</li>
+    	<li style="text-align:left;">
+        	<select name="select" class="chose_item" onChange="location='?o_id='+this.options[this.selectedIndex].value" >
+                <option >选择栏目</option>
+				<%call my_optionid(0,o_id,table_name)%>
+            </select>
+        </li>
+        <li>
+        	<span class="width_15">菜单名称</span>
+            <span class="width_50">链接地址</span>
+            <span class="width_15">菜单排序</span>
+            <span class="width_20">确定操作</span>
+        </li>
+		<%
+        if o_id=0 then
+        else
+			set rs=server.CreateObject("adodb.recordset")
+			rs.Open "select * from "&table_name&" where parent_id="&o_id&" order by s_order asc,id desc",conn,1,1
+			if rs.EOF and rs.BOF then
+				response.Write "<div align=center><font color=red>还没有菜单</font></center>"
+				paixu=0
+			else
+				formi=0
+				do while not rs.EOF
+        %>
+        <form name="formlist<%=formi%>" method="post" action="?action=edit&id=<%=rs(0)%>&o_id=<%= o_id %>">
+        <li>
+        	<span class="width_15">
+            	<input name="s_name" type="text" id="s_name" size="12" value="<%=trim(rs("s_name"))%>">
+            </span>
+            <span class="width_50">
+            	<input name="s_url" type="text" id="s_url" size="45" value="<%=trim(rs("s_url"))%>">
+            </span>
+            <span class="width_15">
+            	<%if Isid(db_F(table_name,"top 1 s_order","s_order<"&Rs("s_order")&" and s_ok=1 and parent_id<>0  order by s_order desc"),0)<>0 then%><a href="?action=s_order_up&id=<%=trim(rs("id"))%>&o_id=<%= o_id %>">上</a><%else%>顶<%end if%>
+                <input name="s_order<%=rs(0)%>" type="text"  size="2" value="<%=int(rs("s_order"))%>" onChange="location='?action=s_order&id=<%=trim(rs("id"))%>&o_id=<%= o_id %>&s_order=' + this.value">
+				<%if Isid(db_F(table_name,"top 1 s_order","s_order>"&Rs("s_order")&" and s_ok=1 and parent_id<>0  order by s_order asc"),0)<>0 then%><a href="?action=s_order_down&id=<%=trim(rs("id"))%>&o_id=<%= o_id %>">下</a><%else%>底<%end if%>
+            </span>
+            <span class="width_20">
+          <input type="submit" class="inputkkys" name="Submit" value="修改">&nbsp;|&nbsp;<%
 		 if rs("s_ok") then
 		    response.Write("<a title=取消显示 href=?action=s_ok&s_ok=0&id="&rs(0)&"&O_id="&O_id&" ><font color=blue>显示</font></a>")
 		 else
 		    response.Write("<a title=取消隐藏' href=?action=s_ok&s_ok=1&id="&rs(0)&"&O_id="&O_id&" ><font color=red>隐藏</font></a>")
 		 end if
-%>
-          &nbsp;&nbsp; <a href="?id=<%=int(rs("id"))%>&action=del&o_id=<%=o_id%>" onClick="return confirm('您确定进行删除操作吗？')">
-          <!--删除-->
-          </a></td>
-        </tr>
-       </form>
-       <%rs.movenext:formi=formi+1
-        loop
-        paixu=rs.RecordCount
-        rs.close
-        set rs=nothing
-        end if
+%>&nbsp;|&nbsp;<a href="?id=<%=int(rs("id"))%>&action=del&o_id=<%=o_id%>" onClick="return confirm('您确定进行删除操作吗？')">删除</a>
+            </span>
+        </li>
+        </form>
+        <%
+				rs.movenext:formi=formi+1
+				loop
+				paixu=rs.RecordCount
+				rs.close
+				set rs=nothing
+			end if
         end if
 		%>
-      </table></td>
-    </tr>
-   </table></td>
- </tr>
- <tr>
-  <td><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" class="lmdh">
-    <tr>
-      <td align="center">添加菜单</td>
-    </tr>
-  </table>
-    <table class="tableBorder" width="100%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-    
-    <tr>
-     <td ><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" class="lmlb">
-       <tr>
-        <td width="13%" height="30" align="center">菜单名称
-         </div></td>
-        <td width="47%" align="center">链接地址</td>
-        <td width="10%" align="center">菜单排序
-         </div></td>
-        <td width="30%" align="center">确定操作
-         </div></td>
-       </tr>
-       <form name="form2" method="post" action="?action=add&o_id=<%= o_id %>">
-        <tr>
-         <td height="30" align="center" bgcolor="<%=Color_0%>"><input name="s_name" type="text" id="s_name" size="12">         </td>
-         <td align="center" bgcolor="<%=Color_0%>"><input name="s_url" type="text" id="s_url" size="45">         </td>
-         <td align="center" bgcolor="<%=Color_0%>"><input name="s_order" type="text" id="s_order" size="4" value="<%=paixu+1%>"></td>
-         <td align="center" bgcolor="<%=Color_0%>"><input type="submit" class="inputkkys" name="Submit2" value="添加菜单"></td>
-        </tr>
-       </form>
-      </table></td>
-    </tr>
-   </table></td>
-  <td width="0%"></td>
-</table>
+        <li></li>
+        <li class="bold">菜单添加</li>
+        <li>
+        <form name="form2" method="post" action="?action=add&o_id=<%= o_id %>">
+        <span class="width_15"><input name="s_name" type="text" id="s_name" size="12"></span>
+        <span class="width_50"><input name="s_url" type="text" id="s_url" size="45"></span>
+        <span class="width_15"><input name="s_order" type="text" id="s_order" size="4" value="<%=paixu+1%>"></span> 
+        <span class="width_20"><input type="submit" class="inputkkys" name="Submit2" value="添加菜单"></span>
+        </form>
+        </li>
+    </ul>
+</div>
 <script>
 function append_url(idnum)
 {

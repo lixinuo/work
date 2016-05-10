@@ -5,4 +5,5 @@
 <link id="langLink" type="text/css" rev="contents" rel="stylesheet" media="screen" href="../css/Rezo_zh.css" />
 <!--此处为兼容以前CSS所用,若你有自己的CSS可以拷贝到Rezo_define.css文件,这样你的定义就会覆盖原来的定义-->
 <link type="text/css" rel="stylesheet" rev="contents" media="screen" href="../css/Rezo_define.css" />
+<link type="text/css" rel="stylesheet" href="../css/class.css" />
 
