@@ -68,4 +68,42 @@ response.write "<script>location.href='index.asp';</script>"
 end if
 end if
 end sub
+
+function my_optionid(optionid,old_optionid,tablename)
+	arrID=Cint(optionid)
+	Set rsdir = Conn.Execute("Select ID,s_name,Parent_ID,class_depth from "&tablename&" where s_ok=1 and Parent_ID="&arrID&" order by s_order asc,id desc")
+	if rsdir.eof or rsdir.bof then
+		set rsdir = nothing:db_OptionID = arrID:exit function
+	else
+		do while not rsdir.eof
+        for j=1 to rsdir(3)
+          brstr="&nbsp;&nbsp;"&brstr
+        next
+			arrID = "<option value="&rsdir(0)
+			if cint(rsdir(0))=Cint(old_optionid) then 
+			 arrID=arrID&" selected "
+			end if
+			arrID=arrID&">"&brstr&"|-"&trim(rsdir(1))&"</option> "
+			response.Write(arrID)			
+		rsdir.movenext:brstr=""
+		loop
+	end if
+	set rsdir = nothing
+end function
+
+function get_positon(id)
+for i=0 to ubound(id_a,2)
+	 if id_a(0,i)&""=id&"" then get_positon=i
+next
+end function
+
+function get_content(id)
+if id>ubound(id_a,2) or id<0 then
+ get_content=""
+else
+ for i=0 to ubound(id_a,2)
+	 if i=id then get_content=id_a(0,i)
+ next
+end if
+end function
 %>

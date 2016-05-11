@@ -78,7 +78,7 @@ function CheckForm()
           </table>
           </form>
         </div>
-        <div class="fg"><img src="theme/default/images/fg.jpg" /></div>
+        <div class="fg"><img src="images/fg.jpg" /></div>
     </div>
 </div>
 </body>
