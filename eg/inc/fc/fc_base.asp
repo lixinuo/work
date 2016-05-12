@@ -181,6 +181,8 @@ function Upload_Init()
  s =s & "		AjaxUp.reset();  "&vbcr
  s =s & "		contenter.style.display=""block""; "&vbcr
  s =s & "		var ps=_.abs(srcElement);"&vbcr
+ s =s & "		contenter.style.position='fixed';"&vbcr
+ s =s & "		contenter.style.zIndex='100';"&vbcr
  s =s & "		contenter.style.top=(ps.y + 20) + ""px"";  "&vbcr
  s =s & "		contenter.style.left=ps.x + ""px"";"&vbcr
  s =s & "		AjaxUp.succeed=function(files){"&vbcr
@@ -226,7 +228,7 @@ End Function
 
 function Upload_input(Input_name,Input_value)
  dim s:s=""
- s =s & "<input type=""text"" name="""&Input_name&""" id="""&Input_name&"""  readonly=""true"" size=""30""  class=""inputkkys"" value="""&Input_value&""" />"&vbcr
+ s =s & "<input type=""text"" name="""&Input_name&""" id="""&Input_name&"""  readonly=""true""  class=""inputkkys"" value="""&Input_value&""" />"&vbcr
  s =s & "<input type=""button"" value=""上传附件"" onclick=""showUploader('"&Input_name&"',this);""  class=""inputkkys"" />"&vbcr
  Upload_input=s
 end function

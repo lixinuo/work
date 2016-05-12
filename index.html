@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<script type="text/javascript">
+var o = { 
+	x : 1,
+	y : {
+		z : [false , null , Date.now()]		
+	} 
+};
+console.log(o);
+json1 = JSON.stringify(o);
+console.log(json1);
+json2 = JSON.parse(json1);
+console.log(json2);
+var misc = [1.1, true , "a" , "12"];
+misc.push("adf");
+misc.unshift(12);
+console.log(misc);
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
