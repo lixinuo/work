@@ -52,7 +52,7 @@ if(window.screen.width<'1024'){switchSysBar()}
         </table>
     </td>
     <td style="WIDTH: 100%">
-        <iframe frameborder="0" id="main" name="main" scrolling="yes" src="System_first.asp" style="HEIGHT: 100%; VISIBILITY: inherit; WIDTH: 100%; Z-INDEX: 1"></iframe></td>
+        <iframe frameborder="0" id="main" name="main" src="System_first.asp" style="HEIGHT: 100%; VISIBILITY: inherit; WIDTH: 100%; Z-INDEX: 1"></iframe></td>
     </tr>
 </table>
 </body>

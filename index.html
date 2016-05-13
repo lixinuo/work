@@ -1,24 +1,49 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>test</title>
+<script type="text/javascript" src="eg/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="eg/js/Base64.js"></script>
 <script type="text/javascript">
-var o = { 
-	x : 1,
-	y : {
-		z : [false , null , Date.now()]		
-	} 
-};
-console.log(o);
-json1 = JSON.stringify(o);
-console.log(json1);
-json2 = JSON.parse(json1);
-console.log(json2);
-var misc = [1.1, true , "a" , "12"];
-misc.push("adf");
-misc.unshift(12);
-console.log(misc);
+$(function(){
+	$("#getvalue").click(function(){
+		
+		var host = "http://biz.app365.com/bizweb/services/web.Query/orderTracking"; 
+		//var datajson = {"order_no" : "80088003799"};
+		//datajson = datajson.toString();
+		//console.log(datajson);
+		//host = host + datajson;
+		
+		userMes = base64encode("1126377256:1660636684177408");
+		
+		
+		
+		$.ajax({
+			url : host,
+			type: 'GET',
+			beforeSend: function (xhr) {  
+			   	xhr.setRequestHeader("Authorization", "Basic " + userMes);  
+		   	},	
+			dataType: 'jsonp',
+            data: "{}",
+            jsonp: "callback",
+			jsonpCallback: "jsonpCallback",
+			//要传递的参数,没有传参时，也一定要写上 
+			//返回Json类型 
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            },
+			success: function (result) { 
+				
+			}, 
+		});
+		
+	});	
+	
+});
 
 
 
@@ -26,5 +51,6 @@ console.log(misc);
 </head>
 
 <body>
+<input type="button" id="getvalue" name="getvalue" value="获取">
 </body>
 </html>
